@@ -1,18 +1,25 @@
-package com.restapitest;
+package com.resrapitest;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Test;
+import com.restapitest.People;
+import io.restassured.RestAssured;
+import io.restassured.RestAssured.*;
+import org.junit.jupiter.api.Test;
+import org.testng.annotations.TestInstance;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-public class testJsonToJava {
+public class TestJsonToJava {
 
-    private String cour;
+//    @Test
+//    public void test(){
+//        List<People> people = RestAssured.given().when().get("people/Luke Skywalker/").as(People.class)
+//    }
+
 
     @Test
-    public void test(){
+    public void test_case(){
 //        String base_dir = System.getProperty("user.dir");
         String json_dir = "src/main/java/com/restapitest/demo.json";
         System.out.println(json_dir);
@@ -20,7 +27,7 @@ public class testJsonToJava {
         ObjectMapper mapper = new ObjectMapper();
 
         try{
-            Student stu = mapper.readValue(new File(json_dir), Student.class);
+            People stu = mapper.readValue(new File(json_dir), People.class);
             System.out.println("Id = " + stu.getId() + " || " + "Name = " + stu.getName() +
                     " || " + "Height = " + stu.getHeight() + " || " + "mass = " + stu.getMass()
                     + " || " + "Hair_Color = " + stu.getHair_color()

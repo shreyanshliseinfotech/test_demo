@@ -2,7 +2,7 @@ package com.restapitest;
 
 import java.util.List;
 
-public class Student {
+public class People {
 
     public int id;
     public  String name;
