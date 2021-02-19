@@ -1,7 +1,13 @@
 package com.restapitest;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import java.util.Date;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class Film {
 
     public int id;
@@ -11,6 +17,15 @@ public class Film {
     public String director;
     public String producer;
     public Date release_date;
+
+    public Film(String title, int episode_id, String opening_crawl, String director, String producer, Date release_date) {
+        this.title = title;
+        this.episode_id = episode_id;
+        this.opening_crawl = opening_crawl;
+        this.director = director;
+        this.producer = producer;
+        this.release_date = release_date;
+    }
 
     public int getId() {
         return id;

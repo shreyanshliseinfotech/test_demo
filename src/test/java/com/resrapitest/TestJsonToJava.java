@@ -12,16 +12,10 @@ import java.util.List;
 
 public class TestJsonToJava {
 
-//    @Test
-//    public void test(){
-//        List<People> people = RestAssured.given().when().get("people/Luke Skywalker/").as(People.class)
-//    }
-
-
     @Test
     public void test_case(){
 //        String base_dir = System.getProperty("user.dir");
-        String json_dir = "src/main/java/com/restapitest/demo.json";
+        String json_dir = "src/main/java/com/restapitest/people.json";
         System.out.println(json_dir);
 
         ObjectMapper mapper = new ObjectMapper();

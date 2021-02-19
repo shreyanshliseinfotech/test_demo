@@ -1,0 +1,13 @@
+<suite name="DemoSuite" verbose ="5" parallel="methods" thread-count="10">
+    <test name="DemoTest">
+
+        <classes>
+            <class name="com.resrapitest.DemoApiTest"></class>
+            <class name = "com.resrapitest.DeserializationWithGenericsTest"></class>
+            <class name="com.resrapitest.NumericAssert"></class>
+            <class name = "com.resrapitest.TestJsonToJava"></class>
+            <class name = "com.resrapitest.TextAssertion"></class>
+            <class name = "com.resrapitest.VerifyAssert"></class>
+        </classes>
+    </test>
+</suite>
