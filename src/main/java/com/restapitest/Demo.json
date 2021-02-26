@@ -1,0 +1,67 @@
+{
+  "12326879": {
+    "productId": 12326879,
+    "defaultOption": {
+      "optionId": 19846224,
+      "productId": 12326879,
+      "sellingPrice": "17.39",
+      "compareType": "NONE",
+      "comparePrice": "21.71",
+      "savings": "0.00",
+      "savingsPercent": 0,
+      "basePrice": "17.39",
+      "cost": "5.40",
+      "discountApplied": false,
+      "onSale": false,
+      "siteSaleId": null,
+      "siteSaleStartDate": null,
+      "siteSaleEndDate": null,
+      "pricingLabelSet": [
+        {
+          "labelKey": "TODAY",
+          "formattedPrice": "$17.39",
+          "priceType": "CURRENT_PRICE"
+        }
+      ],
+      "discountDetails": null,
+      "pricingResponseEnum": "SUCCESS",
+      "msrp": null,
+      "wasPrice": "0.00",
+      "compareAt": null,
+      "mapPrice": null
+    },
+    "allOptions": [
+      {
+        "optionId": 19846224,
+        "productId": 12326879,
+        "sellingPrice": "17.39",
+        "compareType": "NONE",
+        "comparePrice": "21.71",
+        "savings": "0.00",
+        "savingsPercent": 0,
+        "basePrice": "17.39",
+        "cost": "5.40",
+        "discountApplied": false,
+        "onSale": false,
+        "siteSaleId": null,
+        "siteSaleStartDate": null,
+        "siteSaleEndDate": null,
+        "pricingLabelSet": [
+          {
+            "labelKey": "TODAY",
+            "formattedPrice": "$17.39",
+            "priceType": "CURRENT_PRICE"
+          }
+        ],
+        "discountDetails": null,
+        "pricingResponseEnum": "SUCCESS",
+        "msrp": null,
+        "wasPrice": "0.00",
+        "compareAt": null,
+        "mapPrice": null
+      }
+    ],
+    "pricingResponseEnum": "SUCCESS",
+    "singlePrice": true
+  }
+}

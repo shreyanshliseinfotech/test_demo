@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.resrapitest.DemoApiTest
+-------------------------------------------------------------------------------
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.396 s - in com.resrapitest.DemoApiTest
