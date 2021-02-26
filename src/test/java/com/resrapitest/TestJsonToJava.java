@@ -29,12 +29,13 @@ public class TestJsonToJava {
                     + " || " + "eye_color = " + stu.getEye_color()
                     + " || " + "birth_year = " + stu.getBirth_year()
                     + " || " + "gender = " + stu.getGender()
-                    + " || \n" + "Title = " + stu.getFilms().get(0).getTitle()
-                    + " || " + "Episode_id = " + stu.getFilms().get(0).getEpisode_id()
-                    + " || " + "Opening_crawl = " + stu.getFilms().get(0).getOpening_crawl()
-                    + " || " + "Director = " + stu.getFilms().get(0).getDirector()
-                    + " || " + "Producer = " + stu.getFilms().get(0).getProducer()
-                    + " || " + "Release_date = " + stu.getFilms().get(0).getRelease_date());
+//                    + " || \n" + "Title = " + stu.getFilms().get(0).getTitle()
+//                    + " || " + "Episode_id = " + stu.getFilms().get(0).getEpisode_id()
+//                    + " || " + "Opening_crawl = " + stu.getFilms().get(0).getOpening_crawl()
+//                    + " || " + "Director = " + stu.getFilms().get(0).getDirector()
+//                    + " || " + "Producer = " + stu.getFilms().get(0).getProducer()
+//                    + " || " + "Release_date = " + stu.getFilms().get(0).getRelease_date()
+                      );
 
         }catch (IOException e) {
             e.printStackTrace();

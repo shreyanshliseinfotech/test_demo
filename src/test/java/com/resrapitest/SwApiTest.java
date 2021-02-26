@@ -1,5 +1,8 @@
 package com.resrapitest;
 
+import com.restapitest.FilmPojo;
+import com.restapitest.PlanetPojo;
+import com.restapitest.SpeciesPojo;
 import io.restassured.http.ContentType;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
@@ -24,22 +27,20 @@ public class SwApiTest {
             .request(Method.GET, "https://swapi.dev/api/planets/1").then()
             .extract().response();
 
+        PlanetPojo planet = response.as(PlanetPojo.class);
+        System.out.println("planet :"+ planet);
+
           System.out.println(response.getBody().prettyPrint());
 
-          JSONObject json = new JSONObject(response.asString());
-          System.out.println("json ===== "+ json);
+          assertThat(planet.getName(), is("Tatooine"));
+          assertThat(planet.getName(), equalTo("Tatooine"));
 
-          String name = json.get("name").toString();
-          int statusCode = response.getStatusCode();
-          String diameter = json.get("diameter").toString();
+          assertThat(planet.getPopulation(), is("200000"));
+          assertThat(planet.getPopulation(), equalTo("200000"));
 
+          assertThat(planet.getDiameter(), is("10465"));
+          assertThat(planet.getDiameter(), equalTo("10465"));
 
-          assertThat(name, is("Tatooine"));
-          assertThat(statusCode, is(200));
-          assertThat(name, equalTo("Tatooine"));
-
-          assertThat(diameter, is("10465"));
-          assertThat(diameter, equalTo("10465"));
     }
 
     @Test
@@ -52,21 +53,20 @@ public class SwApiTest {
                 .request(Method.GET, "https://swapi.dev/api/species/1").then()
                 .extract().response();
 
+        SpeciesPojo species = response.as(SpeciesPojo.class);
+        System.out.println("species :"+ species);
+
         System.out.println(response.getBody().prettyPrint());
 
-        JSONObject json = new JSONObject(response.asString());
-        System.out.println("json ===== "+ json);
+        assertThat(species.getName(), is("Human"));
+        assertThat(species.getName(), equalTo("Human"));
 
-        String name = json.get("name").toString();
-        int statusCode = response.getStatusCode();
-        String classification = json.get("classification").toString();
+        assertThat(species.getClassification(), is("mammal"));
+        assertThat(species.getClassification(), equalTo("mammal"));
 
-        assertThat(name, is("Human"));
-        assertThat(statusCode, is(200));
-        assertThat(name, equalTo("Human"));
+        assertThat(species.getDesignation(), is("sentient"));
+        assertThat(species.getDesignation(), equalTo("sentient"));
 
-        assertThat(classification, is("mammal"));
-        assertThat(classification, equalTo("mammal"));
     }
 
     @Test
@@ -79,20 +79,19 @@ public class SwApiTest {
                 .request(Method.GET, "https://swapi.dev/api/films/1").then()
                 .extract().response();
 
+        FilmPojo film = response.as(FilmPojo.class);
+        System.out.println("film :"+ film);
+
         System.out.println(response.getBody().prettyPrint());
 
-        JSONObject json = new JSONObject(response.asString());
-        System.out.println("json ===== "+ json);
+        assertThat(film.getTitle(), is("A New Hope"));
+        assertThat(film.getTitle(), equalTo("A New Hope"));
 
-        String title = json.get("title").toString();
-        int statusCode = response.getStatusCode();
-        String director = json.get("director").toString();
+        assertThat(film.getDirector(), is("George Lucas"));
+        assertThat(film.getDirector(), equalTo("George Lucas"));
 
-        assertThat(title, is("A New Hope"));
-        assertThat(statusCode, is(200));
-        assertThat(title, equalTo("A New Hope"));
+        assertThat(film.getRelease_date(), is("1977-05-25"));
+        assertThat(film.getRelease_date(), equalTo("1977-05-25"));
 
-        assertThat(director, is("George Lucas"));
-        assertThat(director, equalTo("George Lucas"));
     }
 }

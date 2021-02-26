@@ -2,7 +2,6 @@ package com.resrapitest;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
