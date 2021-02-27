@@ -1,6 +1,7 @@
 package com.resrapitest;
 
 import com.restapitest.FilmPojo;
+import com.restapitest.ListFilms;
 import com.restapitest.PlanetPojo;
 import com.restapitest.SpeciesPojo;
 import io.restassured.http.ContentType;
@@ -9,6 +10,9 @@ import io.restassured.response.Response;
 
 import org.json.JSONObject;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;
@@ -92,6 +96,37 @@ public class SwApiTest {
 
         assertThat(film.getRelease_date(), is("1977-05-25"));
         assertThat(film.getRelease_date(), equalTo("1977-05-25"));
+
+    }
+
+    @Test
+    public void lisrFilmTest() {
+
+        Response response = given()
+                .contentType(ContentType.XML)
+                .accept(ContentType.JSON)
+                .when()
+                .request(Method.GET, "https://swapi.dev/api/films").then()
+                .extract().response();
+
+        List<FilmPojo> filmPojo = new ArrayList<FilmPojo>();
+
+        ListFilms films = response.as(ListFilms.class);
+        System.out.println("films :"+ films);
+
+//        FilmPojo film = response.as(FilmPojo.class);
+//        System.out.println("film :"+ film);
+
+        System.out.println(response.getBody().prettyPrint());
+
+//        assertThat(film.getTitle(), is("A New Hope"));
+//        assertThat(film.getTitle(), equalTo("A New Hope"));
+//
+//        assertThat(film.getDirector(), is("George Lucas"));
+//        assertThat(film.getDirector(), equalTo("George Lucas"));
+//
+//        assertThat(film.getRelease_date(), is("1977-05-25"));
+//        assertThat(film.getRelease_date(), equalTo("1977-05-25"));
 
     }
 }

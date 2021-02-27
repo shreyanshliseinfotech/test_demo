@@ -101,3 +101,16 @@ public class SwApiTest1 {
 //        assertThat(classification, equalTo("mammal"));
 //    }
 }
+
+// multiple nested data get
+//https://stackoverflow.com/questions/56380588/how-to-extract-item-from-nested-list-rest-assured
+
+//        List<Page> list = new ArrayList<>();
+//        list = given()
+//                .contentType(ContentType.JSON)
+//                .when()
+//                .get("https://reqres.in/api/users")
+//                .then()
+//                .extract().body().as(list.getClass());
+//
+//        System.out.println("List :"+ list);
