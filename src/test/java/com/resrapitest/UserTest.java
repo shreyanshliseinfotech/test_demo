@@ -120,18 +120,18 @@ public class UserTest {
 
         System.out.println("=== " + response.getBody().prettyPrint());
 
-        SingleUser singlrUser = response.as(SingleUser.class);
+        String name = response.jsonPath().getString("name");
+        String job = response.jsonPath().getString("job");
+        String updatedAt = response.jsonPath().getString("updatedAt");
 
-        System.out.println("singlrUser :" + singlrUser);
+        assertThat(name, is("morpheus"));
+        assertThat(name, equalTo("morpheus"));
 
-        assertThat(singlrUser.getName(), is("morpheus"));
-        assertThat(singlrUser.getName(), equalTo("morpheus"));
+        assertThat(job, is("zion resident"));
+        assertThat(job, equalTo("zion resident"));
 
-        assertThat(singlrUser.getJob(), is("zion resident"));
-        assertThat(singlrUser.getJob(), equalTo("zion resident"));
-
-        assertThat(singlrUser.getUpdatedAt(), is(singlrUser.getUpdatedAt()));
-        assertThat(singlrUser.getUpdatedAt(), equalTo(singlrUser.getUpdatedAt()));
+        assertThat(updatedAt, is(updatedAt));
+        assertThat(updatedAt, equalTo(updatedAt));
     }
 
     @Test
